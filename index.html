@@ -8,17 +8,52 @@
 		</style>
 	</head>
 	<body>
-		<!-- <script type="importmap">
-			{
-				"imports": {
-					"three": "../build/three.module.js",
-					"three/addons/": "./jsm/"
-				}
-			}
-		</script> -->
+
     <script src="ammo.wasm.js"></script>
 
 		<script type="module" src="/main.js"></script>
+
+		<script id="vertexShader" type="x-shader/x-vertex">
+			varying vec2 vUv;
+
+			void main() {
+				vUv = uv;
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+			}
+		</script>
+
+		<script id="fragmentShader" type="x-shader/x-fragment">
+			varying vec2 vUv;
+
+			uniform float strength;
+			uniform sampler2D tDiffuse;
+
+			void main() {
+				float n = 50.0 / strength;
+				gl_FragColor = texture2D( tDiffuse, floor( vUv * n ) / n );
+			}
+		</script>
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/build/three.js"></script>
+
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/examples/js/libs/mmdparser.min.js"></script>
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/examples/js/libs/ammo.js"></script>
+
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/examples/js/loaders/TGALoader.js"></script>
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/examples/js/loaders/MMDLoader.js"></script>
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/examples/js/effects/OutlineEffect.js"></script>
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/examples/js/animation/CCDIKSolver.js"></script>
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/examples/js/animation/MMDPhysics.js"></script>
+
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/examples/js/postprocessing/EffectComposer.js"></script>
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/examples/js/postprocessing/ShaderPass.js"></script>
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/examples/js/shaders/CopyShader.js"></script>
+
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/examples/js/shaders/LuminosityHighPassShader.js"></script>
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/examples/js/postprocessing/UnrealBloomPass.js"></script>
+
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/examples/js/Detector.js"></script>
+		<script src="https://rawcdn.githack.com/mrdoob/three.js/r87/examples/js/libs/dat.gui.min.js"></script>
+
 
 	</body>
 </html>

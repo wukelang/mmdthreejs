@@ -1,0 +1,33 @@
+Original base shader 			: 舞力介入P
+Animated texture			: ??? (from MME sample pack)
+Normal map	 			: LessThanEqual (AlternativeFull)
+Specular map	 			: KH40
+Cube map				: AMD (from MME sample pack)
+Vertex color				: KH40
+Sub map					: KH40
+Alpha test 	 			: KH40
+Fake Subsurface Scattering 	 	: KH40
+Rim Light 	 			: KH40
+Untinted Spa/CubeMap/Specular 	 	: KH40
+Parallax 	 	                : Rui (Ray-cast)
+Custom FOV 		                : banitron
+IBL 					: KH40
+Half Lambert 				: (from Half Life-game)
+Light Sources 				: KH40, Ben Cloward
+Shading map 				: KH40
+PuniEngine				: ビームマンP
+HgShadow				: 針金P
+Mixing shaders 				: KH40
+
+
+
+//Social accounts//
+
+KH40 		: https://twitter.com/khoast40
+舞力介入P	: https://www.nicovideo.jp/user/282266
+LessThanEqual	: https://twitter.com/lessthanequal
+Rui (Ray-cast)  : https://twitter.com/Rui_cg || https://github.com/ray-cast/ray-mmd
+banitron        : https://www.deviantart.com/banitron
+Ben Cloward	: https://www.youtube.com/c/BenCloward
+ビームマンP	: https://twitter.com/beammanp
+針金P		: https://twitter.com/hariganep
